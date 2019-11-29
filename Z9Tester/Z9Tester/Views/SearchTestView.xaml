@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Z9Tester.Services"
+             mc:Ignorable="d"
+        BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             x:Class="Z9Tester.Views.SearchTestView">
+    <Shell.SearchHandler>
+        <controls:CommentSearchHandler Placeholder="Enter search term"
+                                          ShowsResults="true"
+                                          DisplayMemberName="title" />
+    </Shell.SearchHandler>
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <CollectionView
+            
+            BindingContext="{Binding Search}"
+            ItemsSource="{Binding ListaComentarios}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame
+                        Margin="10"
+                        CornerRadius="0"
+                        BackgroundColor="LightPink"
+                        Padding="10">
+                        <StackLayout
+                        BackgroundColor="Aqua">
+                            <Label
+                            FontSize="10"
+                            Text="{Binding title}"/>
+                            <Label
+                            FontAttributes="Bold"
+                            FontSize="13"
+                            Text="{Binding body}"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+            

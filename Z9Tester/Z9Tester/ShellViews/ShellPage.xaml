@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Z9Tester.Views"
+       xmlns:customs="clr-namespace:Z9Tester.Customs"
+       FlyoutIsPresented="False"
+       FlyoutBehavior="Disabled"
+       x:Class="Z9Tester.ShellViews.ShellPage">
+
+    <!--<TabBar/FlyoutItem-->
+    <TabBar 
+        
+        Title="Animals"
+        
+        FlyoutDisplayOptions="AsMultipleItems">
+
+
+
+
+        <Tab
+            Title="UI Tests"
+            Style="{StaticResource BaseStyle}"
+            Icon="paw.png">
+            <ShellContent 
+                Title="About"
+                Icon="cat.png">
+                <local:AboutPage />
+            </ShellContent>
+            <ShellContent 
+                Title="Frame test"
+                Icon="cat.png">
+                <local:TestElementView />
+            </ShellContent>
+            <ShellContent 
+                Title="Flex"
+                Icon="cat.png">
+                <local:FlextestView />
+            </ShellContent>
+            <ShellContent 
+                Title="Search"
+                Icon="cat.png">
+                <local:SearchTestView />
+            </ShellContent>
+        </Tab>
+
+        <ShellContent 
+            Title="Search"
+            Style="{StaticResource BaseStyle}"
+            Icon="bear.png">
+            <local:SearchTestView />
+        </ShellContent>
+
+        <ShellContent 
+            Title="Elephants"
+            Style="{StaticResource BaseStyle}"
+            Icon="elephant.png">
+            <local:AboutPage />
+        </ShellContent>
+    </TabBar>
+</Shell>

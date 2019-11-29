@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:infra="clr-namespace:Z9Tester.Infrastructure"
+             mc:Ignorable="d"
+             x:Class="Z9Tester.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            
+            <!--Instance Locator-->
+            <infra:InstanceLocator x:Key="Locator"/>
+            
+            <!--Colors-->
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
+
+            <!--#region Global Styles-->
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+
+            <Style
+                x:Key="Sliders"
+                TargetType="Slider">
+                <Setter
+                    Property="MinimumTrackColor"
+                    Value="DarkRed"/>
+                <Setter
+                    Property="MaximumTrackColor"
+                    Value="DarkCyan"/>
+                <Setter
+                    Property="ThumbColor"
+                    Value="Black"/>
+            </Style>
+            
+            
+            <Style 
+                x:Key="BaseStyle"
+                TargetType="Element">
+                <Setter 
+                    Property="Shell.TabBarBackgroundColor"
+                    Value="GreenYellow" />
+                <Setter 
+                    Property="Shell.TabBarTitleColor"
+                    Value="Red" />
+                <Setter 
+                    Property="Shell.TabBarUnselectedColor"
+                    Value="SeaGreen" />
+            </Style>
+            
+            <!--#endregion-->
+            
+        </ResourceDictionary>
+    </Application.Resources>
+    
+</Application>

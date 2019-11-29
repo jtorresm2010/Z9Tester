@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+        BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             BackgroundColor="DarkBlue"
+             Shell.NavBarIsVisible="False"
+             x:Class="Z9Tester.Views.TestElementView">
+    <FlexLayout
+        BindingContext="{Binding About}"
+        HorizontalOptions="Fill"
+        Direction="Column"
+        Wrap="NoWrap"
+        BackgroundColor="Azure">
+
+        <!--Item a probar-->
+        <StackLayout
+            HorizontalOptions="CenterAndExpand"
+            BackgroundColor="Peru"
+            FlexLayout.Grow="1">
+
+            <Frame
+                HorizontalOptions="Center"
+                Margin="{Binding MarginValue}"
+                Padding="{Binding PaddingValue}"
+                WidthRequest="{Binding Value, Source={x:Reference Xslider}}"
+                HeightRequest="{Binding Value, Source={x:Reference Yslider}}"
+                CornerRadius="{Binding Value, Source={x:Reference Rslider}}"
+                BackgroundColor="BlanchedAlmond">
+
+                <StackLayout
+                    Opacity="0.5"
+                    BackgroundColor="Aquamarine"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"/>
+            </Frame>
+
+
+        </StackLayout>
+
+        <!--Controles-->
+
+        <ScrollView
+                HeightRequest="200">
+            <StackLayout>
+                <StackLayout
+                    Spacing="0"
+                    Orientation="Horizontal">
+                <StackLayout>
+                    <Slider 
+                        Value="{Binding MLslider}"
+                        Style="{StaticResource Sliders}"
+                        WidthRequest="150"
+                        HorizontalOptions="CenterAndExpand"
+                        x:Name="MLslider"
+                        Maximum="100"/>
+                    <Slider 
+                        Value="{Binding MUslider}"
+                        Style="{StaticResource Sliders}"
+                        WidthRequest="150"
+                        HorizontalOptions="CenterAndExpand"
+                        x:Name="MUslider"
+                        Maximum="100"/>
+                    <Slider 
+                        Value="{Binding MRslider}"
+                        Style="{StaticResource Sliders}"
+                        WidthRequest="150"
+                        HorizontalOptions="CenterAndExpand"
+                        x:Name="MRslider"
+                        Maximum="100"/>
+                    <Slider 
+                        Value="{Binding MBslider}"
+                        Style="{StaticResource Sliders}"
+                        WidthRequest="150"
+                        HorizontalOptions="CenterAndExpand"
+                        x:Name="MBslider"
+                        Maximum="100"/>
+                </StackLayout>
+                <StackLayout>
+                    <Label
+                        HorizontalOptions="StartAndExpand"
+                            TextColor="Black"
+                            BindingContext="{x:Reference MLslider}"
+                            Text="{Binding Value, StringFormat='Margin Left {0:F0}'}"/>
+                    <Label
+                        HorizontalOptions="StartAndExpand"
+                            TextColor="Black"
+                            BindingContext="{x:Reference MUslider}"
+                            Text="{Binding Value, StringFormat='Margin Up {0:F0}'}"/>
+                    <Label
+                        HorizontalOptions="StartAndExpand"
+                            TextColor="Black"
+                            BindingContext="{x:Reference MRslider}"
+                            Text="{Binding Value, StringFormat='Margin Right {0:F0}'}"/>
+                    <Label
+                        HorizontalOptions="StartAndExpand"
+                            TextColor="Black"
+                            BindingContext="{x:Reference MBslider}"
+                            Text="{Binding Value, StringFormat='Margin Bottom {0:F0}'}"/>
+                </StackLayout>
+            </StackLayout>
+                
+                <StackLayout
+                    Spacing="0"
+                    Orientation="Horizontal">
+                    <StackLayout>
+                        <Slider 
+                            Value="{Binding PLslider}"
+                            Style="{StaticResource Sliders}"
+                            WidthRequest="150"
+                            HorizontalOptions="CenterAndExpand"
+                            x:Name="PLslider"
+                            Maximum="100"/>
+                        <Slider 
+                            Value="{Binding PUslider}"
+                            Style="{StaticResource Sliders}"
+                            WidthRequest="150"
+                            HorizontalOptions="CenterAndExpand"
+                            x:Name="PUslider"
+                            Maximum="100"/>
+                        <Slider 
+                            Value="{Binding PRslider}"
+                            Style="{StaticResource Sliders}"
+                            WidthRequest="150"
+                            HorizontalOptions="CenterAndExpand"
+                            x:Name="PRslider"
+                            Maximum="100"/>
+                        <Slider 
+                            Value="{Binding PBslider}"
+                            Style="{StaticResource Sliders}"
+                            WidthRequest="150"
+                            HorizontalOptions="CenterAndExpand"
+                            x:Name="PBslider"
+                            Maximum="100"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label
+                            HorizontalOptions="StartAndExpand"
+                            TextColor="Black"
+                            BindingContext="{x:Reference PLslider}"
+                            Text="{Binding Value, StringFormat='Padding Left {0:F0}'}"/>
+                        <Label
+                            HorizontalOptions="StartAndExpand"
+                            TextColor="Black"
+                            BindingContext="{x:Reference PUslider}"
+                            Text="{Binding Value, StringFormat='Padding Up {0:F0}'}"/>
+                        <Label
+                            HorizontalOptions="StartAndExpand"
+                            TextColor="Black"
+                            BindingContext="{x:Reference PRslider}"
+                            Text="{Binding Value, StringFormat='Padding Right {0:F0}'}"/>
+                        <Label
+                            HorizontalOptions="StartAndExpand"
+                            TextColor="Black"
+                            BindingContext="{x:Reference PBslider}"
+                            Text="{Binding Value, StringFormat='Padding Bottom {0:F0}'}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <Label
+                   BindingContext="{x:Reference Xslider}"
+                   Text="{Binding Value, StringFormat='Width request {0:F0}'}"/>
+
+                <Slider 
+                    x:Name="Xslider"
+                    Maximum="370"
+                    VerticalOptions="CenterAndExpand" />
+
+                <Label
+                   BindingContext="{x:Reference Yslider}"
+                   Text="{Binding Value, StringFormat='Height request {0:F0}'}"/>
+
+                <Slider 
+                    x:Name="Yslider"
+                    Maximum="500"
+                    VerticalOptions="CenterAndExpand" />
+
+                <Label
+                   BindingContext="{x:Reference Rslider}"
+                   Text="{Binding Value, StringFormat='Radio {0:F0}'}"/>
+
+                <Slider 
+                    x:Name="Rslider"
+                    Maximum="90"
+                    VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </ScrollView>
+                    
+                
+            
+        
+        
+        
+        
+        <!--<StackLayout
+            BackgroundColor="Purple">
+
+
+            <Label
+               BindingContext="{x:Reference Xslider}"
+               Text="{Binding Value, StringFormat='Valor X {0:F0}'}"/>
+
+            <Slider x:Name="Xslider"
+                Maximum="370"
+                VerticalOptions="CenterAndExpand" />
+
+            <Label
+               BindingContext="{x:Reference Yslider}"
+               Text="{Binding Value, StringFormat='Valor Y {0:F0}'}"/>
+
+            <Slider x:Name="Yslider"
+                Maximum="500"
+                VerticalOptions="CenterAndExpand" />
+
+            <Label
+               BindingContext="{x:Reference Pslider}"
+               Text="{Binding Value, StringFormat='Padding {0:F0}'}"/>
+
+            <Slider x:Name="Pslider"
+                Maximum="50"
+                VerticalOptions="CenterAndExpand" />
+
+
+            <Label
+               BindingContext="{x:Reference Rslider}"
+               Text="{Binding Value, StringFormat='Radio {0:F0}'}"/>
+
+            <Slider x:Name="Rslider"
+                Maximum="90"
+                VerticalOptions="CenterAndExpand" />
+
+            <Label
+               Text="sdfsdfsdf"/>
+            <Switch
+                x:Name="shadow"/>
+
+        </StackLayout>-->
+    </FlexLayout>
+</ContentPage>
